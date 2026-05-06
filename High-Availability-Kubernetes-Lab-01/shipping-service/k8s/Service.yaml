@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping-service
+spec:
+  ports:
+  - name: shipping-service
+    port: 50051
+    protocol: TCP
+    targetPort: 50051
+  selector:
+    app: shipping-deploy
+  type: ClusterIP
+status:
+  loadBalancer: {}

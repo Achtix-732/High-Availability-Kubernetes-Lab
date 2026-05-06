@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: productcat-service
+spec:
+  ports:
+  - name: productcat-service
+    port: 3550
+    protocol: TCP
+    targetPort: 3550
+  selector:
+    app: productcat-deploy
+  type: ClusterIP
+status:
+  loadBalancer: {}
